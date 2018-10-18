@@ -1,3 +1,6 @@
+
+## 重要port
+
 20  ftp-data　File Transfer[Default Data]（檔傳輸協定[默認資料口]）
 
 21  ftp　File Transfer[Control]（檔傳輸協議[控制]）
@@ -9,20 +12,19 @@
 23  telnet　Telnet（終端仿真協定）
 
 
-25
+25  smtp　Simple Mail Transfer（簡單郵件發送協議）
 
-53
-
-80
+53  domain　Domain Name Server（功能變數名稱伺服器）
 
 
-139
+80  http　World Wide Web HTTP（全球資訊網超文本傳輸協定）
 
 
-443
+139 NetBIOS NetBIOS 對談服務
 
 
-389
+389  輕型目錄存取協定 LDAP
 
+443  超文字傳輸安全協定 - 超文字傳輸協定 over TLS/SSL（加密傳輸）
 
-514
+514 Syslog 協定 - 用於系統登入
