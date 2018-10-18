@@ -1,0 +1,28 @@
+20  ftp-data　File Transfer[Default Data]（檔傳輸協定[默認資料口]）
+
+21  ftp　File Transfer[Control]（檔傳輸協議[控制]）
+
+
+22  ssh　SSH Remote Login Protocol（SSH遠端登錄協定）
+
+
+23  telnet　Telnet（終端仿真協定）
+
+
+25
+
+53
+
+80
+
+
+139
+
+
+443
+
+
+389
+
+
+514
