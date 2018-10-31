@@ -1,0 +1,66 @@
+ping (ip)
+
+使用方式: ping [-t] [-a] [-n count] [-l size] [-f] [-i TTL] [-v TOS]
+            [-r count] [-s count] [[-j host-list] | [-k host-list]]
+            [-w timeout] [-R] [-S srcaddr] [-c compartment] [-p]
+            [-4] [-6] target_name
+
+選項:
+    -t             Ping 指定的主機，直到停止。
+                   若要查看統計資料並繼續，請按 Control-Break;
+                   若要停止，請按 Control-C。
+    -a             將位址解析為主機名稱。
+    -n count       要傳送的回應要求數目。
+    -l size        傳送緩衝區大小。
+    -f             在封包中設定 Don't Fragment 旗標 (僅 IPv4)。
+    -i TTL         存留時間。
+    -v TOS         服務類型 (僅 IPv4。此設定已過時，而且對 IP 標頭中的
+                   服務類型欄位沒有影響)。
+    -r count       記錄路由以供計算躍點 (僅 IPv4)。
+    -s count       供計算躍點的時間戳記 (僅 IPv4)。
+    -j host-list   鬆散的主機清單的來源路由 (僅 IPv4)。
+    -k host-list   嚴格的主機清單來源路由 (僅 IPv4)。
+    -w timeout     每個回覆的等候逾時 (單位為毫秒)。
+    -R             也使用路由標頭測試反向路由 (僅 IPv6)。
+                   根據 RFC 5095，已不再使用此路由標頭。如果使用此標頭，某些
+                   系統可能會捨棄回應要求。
+    -S srcaddr     要使用的來源位址。
+    -c compartment 路由區間識別碼。
+    -p             對 Hyper-V 網路虛擬化提供者位址執行 Ping。
+    -4             強制使用 IPv4。
+    -6             強制使用 IPv6。
+
+
+
+arp -n
+
+顯示和修改位址解析通訊協定 (ARP) 使用的 IP 對
+實際位址轉譯表格。
+
+ARP -s inet_addr eth_addr [if_addr]
+ARP -d inet_addr [if_addr]
+ARP -a [inet_addr] [-N if_addr] [-v]
+
+  -a            質詢目前的通訊協定資料來顯示目前的
+                ARP 項目。如果指定 inet_addr，只會顯示指定電腦的
+                IP 及實體位址。如果有多個網路介面使用 ARP，便會顯示每個 ARP
+                表格的項目。
+  -g            與 -a 相同。
+  -v            以詳細資訊模式顯示目前的 ARP 項目。將會顯示
+                所有無效項目和回路介面上的項目。
+  inet_addr     指定網際網路位址。
+  -N if_addr    顯示 if_addr 指定之網路介面的 ARP
+                項目。
+  -d            刪除 inet_addr 指定的主機。使用萬用字元 * 取代 inet_addr
+                可刪除所有主機。
+  -s            新增主機並將網際網路位址 inet_addr 與實體位址
+                eth_addr 相關聯。實體位址是
+                6 個以連字號分隔的十六進位位元組。該項目
+                永久不變。
+  eth_addr      指定實體位址。
+  if_addr       如果存在，這會指定介面的網際網路位址，
+                應修改此介面的位址轉譯表格。
+                如果不存在，將會使用第一個適用的介面。
+範例:
+  > arp -s 157.55.85.212   00-aa-00-62-c6-09  .... 新增靜態項目。
+  > arp -a                                    .... 顯示 ARP 表格。
